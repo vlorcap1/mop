@@ -124,94 +124,13 @@ canvas{display:block;width:100%!important}
 </header>
 
 <nav class="main-tabs">
-  <button class="mtab act" onclick="sw('obs',this)">📊 Observatorio <span class="tbdg lv">LIVE</span></button>
   <button class="mtab" onclick="sw('mop',this)">🏗️ Proyectos MOP <span class="tbdg ex">EXT</span></button>
   <button class="mtab" onclick="sw('serviu',this)">🏘️ SERVIU Maule <span class="tbdg ex">EXT</span></button>
-  <button class="mtab" onclick="sw('corfo',this)">💼 Análisis CORFO <span class="tbdg ex">EXT</span></button>
   <button class="mtab" onclick="sw('dga',this)">💧 DGA Estaciones <span class="tbdg lv">361</span></button>
   <button class="mtab" onclick="sw('dga-org',this)">🏛️ DGA Organizaciones <span class="tbdg lv">612</span></button>
-  <button class="mtab" onclick="sw('paes',this)">🎓 PAES Maule <span class="tbdg ex">EXT</span></button>
-  <button class="mtab" onclick="sw('mip',this)">📈 MIP Maule <span class="tbdg ex">EXT</span></button>
-  <button class="mtab" onclick="sw('sam',this)">💰 SAM Maule <span class="tbdg ex">EXT</span></button>
-  <button class="mtab" onclick="sw('powerbi',this)">📊 Power BI <span class="tbdg ex">EXT</span></button>
-  <button class="mtab" onclick="sw('noticias',this)">📰 Noticias <span class="tbdg ex">EXT</span></button>
+
 </nav>
 
-<!-- ════ OBSERVATORIO ════ -->
-<div class="tc active" id="t-obs">
-<main class="main">
-<div class="slbl anim">Indicadores Nacionales — mindicador.cl</div>
-<div class="kpis">
-  <div class="kpi anim" style="animation-delay:.04s"><div class="kl">💵 Dólar</div><div class="kv" id="kD"><div class="kld"></div></div><div class="kc" id="kDc"></div><div class="ks">mindicador.cl</div></div>
-  <div class="kpi anim" style="animation-delay:.08s"><div class="kl">🏠 UF</div><div class="kv" id="kU"><div class="kld"></div></div><div class="kc" id="kUc"></div><div class="ks">mindicador.cl</div></div>
-  <div class="kpi anim" style="animation-delay:.12s"><div class="kl">🇪🇺 Euro</div><div class="kv" id="kE"><div class="kld"></div></div><div class="kc" id="kEc"></div><div class="ks">mindicador.cl</div></div>
-  <div class="kpi anim" style="animation-delay:.16s"><div class="kl">📊 IPC</div><div class="kv" id="kI"><div class="kld"></div></div><div class="kc" id="kIc"></div><div class="ks">INE</div></div>
-  <div class="kpi anim" style="animation-delay:.2s"><div class="kl">📈 IMACEC</div><div class="kv" id="kM"><div class="kld"></div></div><div class="kc" id="kMc"></div><div class="ks">BCCh</div></div>
-</div>
-
-<div class="slbl anim" style="animation-delay:.22s">Series Históricas</div>
-<div class="g2 anim" style="animation-delay:.24s">
-  <div class="pnl"><div class="ph"><span class="pt">Dólar Observado</span><span class="bdg ba">LIVE</span></div><div class="chw"><canvas id="cD"></canvas></div></div>
-  <div class="pnl"><div class="ph"><span class="pt">UF</span><span class="bdg ba">LIVE</span></div><div class="chw"><canvas id="cU"></canvas></div></div>
-</div>
-<div class="g2 anim" style="animation-delay:.26s">
-  <div class="pnl"><div class="ph"><span class="pt">IPC — Var. Mensual</span><span class="bdg bi">INE</span></div><div class="chw"><canvas id="cI"></canvas></div></div>
-  <div class="pnl"><div class="ph"><span class="pt">IMACEC</span><span class="bdg bb">BCCh</span></div><div class="chw"><canvas id="cM"></canvas></div></div>
-</div>
-
-<div class="slbl anim" style="animation-delay:.28s">Región del Maule</div>
-<div class="g23 anim" style="animation-delay:.3s">
-  <div class="pnl"><div class="ph"><span class="pt">PIB Regional — Var. Anual %</span><span class="bdg bb">BCCh</span></div><div class="chw tall"><canvas id="cPib"></canvas></div></div>
-  <div class="pnl"><div class="ph"><span class="pt">Ficha Regional</span><span class="bdg bi">INE</span></div>
-    <div class="ms"><div class="mi" style="background:rgba(77,142,255,.1)">👥</div><div><div class="mn">Población</div><div class="mv">1.131.939 hab. (2024)</div></div></div>
-    <div class="ms"><div class="mi" style="background:rgba(52,211,153,.1)">📊</div><div><div class="mn">PIB 2024</div><div class="mv">+5,2% anual</div></div></div>
-    <div class="ms"><div class="mi" style="background:rgba(251,191,36,.1)">💼</div><div><div class="mn">Desempleo</div><div class="mv">7,2% (ENE)</div></div></div>
-    <div class="ms"><div class="mi" style="background:rgba(167,139,250,.1)">🏙️</div><div><div class="mn">Capital</div><div class="mv">Talca</div></div></div>
-    <div class="ms"><div class="mi" style="background:rgba(34,211,238,.1)">📐</div><div><div class="mn">Superficie</div><div class="mv">30.296 km²</div></div></div>
-    <div class="ms"><div class="mi" style="background:rgba(251,113,133,.1)">🍇</div><div><div class="mn">Actividades</div><div class="mv">Agropecuario, Vino, Frutícola</div></div></div>
-  </div>
-</div>
-<div class="g2 anim" style="animation-delay:.32s">
-  <div class="pnl"><div class="ph"><span class="pt">PIB por Sector 2024</span><span class="bdg bb">BCCh</span></div><div class="chw dn"><canvas id="cSec"></canvas></div></div>
-  <div class="pnl"><div class="ph"><span class="pt">Empleo por Rama</span><span class="bdg bi">ENE</span></div>
-    <div class="br"><span class="brl">Agropecuario</span><div class="brt"><div class="brf b2" style="width:28%">28%</div></div></div>
-    <div class="br"><span class="brl">Comercio</span><div class="brt"><div class="brf b1" style="width:18%">18%</div></div></div>
-    <div class="br"><span class="brl">Construcción</span><div class="brt"><div class="brf b3" style="width:11%">11%</div></div></div>
-    <div class="br"><span class="brl">Ind. Manufact.</span><div class="brt"><div class="brf b4" style="width:10%">10%</div></div></div>
-    <div class="br"><span class="brl">Transporte</span><div class="brt"><div class="brf b1" style="width:8%">8%</div></div></div>
-    <div class="br"><span class="brl">Enseñanza</span><div class="brt"><div class="brf b2" style="width:7%">7%</div></div></div>
-    <div class="br"><span class="brl">Otros</span><div class="brt"><div class="brf b4" style="width:18%">18%</div></div></div>
-  </div>
-</div>
-<div class="g23 anim" style="animation-delay:.34s">
-  <div class="pnl"><div class="ph"><span class="pt">Comunas por Provincia</span><span class="bdg bi">INE</span></div>
-    <div class="tabs"><button class="tab act" onclick="prov(this,'talca')">Talca</button><button class="tab" onclick="prov(this,'curico')">Curicó</button><button class="tab" onclick="prov(this,'linares')">Linares</button><button class="tab" onclick="prov(this,'cauquenes')">Cauquenes</button></div>
-    <div class="cg" id="cGrid"></div>
-  </div>
-  <div class="pnl"><div class="ph"><span class="pt">PIB Trimestral</span><span class="bdg bb">BCCh</span></div>
-    <table class="tbl"><thead><tr><th>Trim.</th><th>PIB</th><th>Cons.</th></tr></thead><tbody>
-      <tr><td>2024 Q4</td><td class="v pos">+14,2%</td><td class="v pos">+4,8%</td></tr>
-      <tr><td>2024 Q3</td><td class="v pos">+2,0%</td><td class="v pos">+0,8%</td></tr>
-      <tr><td>2024 Q2</td><td class="v pos">+0,5%</td><td class="v pos">+0,7%</td></tr>
-      <tr><td>2024 Q1</td><td class="v pos">+4,6%</td><td class="v pos">+0,9%</td></tr>
-      <tr><td>2023 Q4</td><td class="v pos">+2,1%</td><td class="v neg">-2,7%</td></tr>
-      <tr><td>2023 Q3</td><td class="v pos">+1,5%</td><td class="v neg">-5,8%</td></tr>
-      <tr><td>2023 Q2</td><td class="v neg">-0,8%</td><td class="v neg">-6,8%</td></tr>
-    </tbody></table>
-  </div>
-</div>
-<div class="slbl anim" style="animation-delay:.36s">Indicadores Adicionales</div>
-<div class="g2 anim" style="animation-delay:.38s">
-  <div class="pnl"><div class="ph"><span class="pt">Desempleo Nacional</span><span class="bdg ba">LIVE</span></div><div class="chw"><canvas id="cDes"></canvas></div></div>
-  <div class="pnl"><div class="ph"><span class="pt">TPM</span><span class="bdg ba">LIVE</span></div><div class="chw"><canvas id="cTpm"></canvas></div></div>
-</div>
-<div class="g2 anim" style="animation-delay:.4s">
-  <div class="pnl"><div class="ph"><span class="pt">Bitcoin (USD)</span><span class="bdg bl">LIVE</span></div><div class="chw"><canvas id="cBtc"></canvas></div></div>
-  <div class="pnl"><div class="ph"><span class="pt">Libra de Cobre (USD)</span><span class="bdg bl">LIVE</span></div><div class="chw"><canvas id="cCob"></canvas></div></div>
-</div>
-</main>
-<footer class="ftr">Observatorio Regional del Maule · <a href="https://mindicador.cl" target="_blank">mindicador.cl</a> · <a href="https://www.bcentral.cl" target="_blank">BCCh</a> · <a href="https://www.ine.gob.cl" target="_blank">INE</a></footer>
-</div>
 
 
 <!-- ════ DGA ════ -->
@@ -464,12 +383,7 @@ canvas{display:block;width:100%!important}
 const IURLS = {
   mop: 'https://vlorcap1.github.io/mop_prueba/',
   serviu: 'https://vlorcap1.github.io/serviu_maule/',
-  corfo: 'https://vlorcap1.github.io/analisis_corfo/#skip-login',
-  paes: 'https://vlorcap1.github.io/paesmaule/',
-  mip: 'https://vlorcap1.github.io/mip_maule/',
-  sam: 'https://vlorcap1.github.io/sam_maule/',
-  powerbi: 'https://app.powerbi.com/view?r=eyJrIjoiOGNhOGEwZDQtMjQ1NC00YmY3LWI3MzYtYWYyNzJlNTMzMjljIiwidCI6ImU3ZDU1MzE2LTQ5M2EtNGRiMi05NzRjLWUwODllZjZjMGZkZSJ9&pageName=d2cff37972c7f96b2245',
-  noticias: 'https://vlorcap1.github.io/noticias/'
+ 
 };
 const iLoaded = {};
 
